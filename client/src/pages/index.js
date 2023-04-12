@@ -1,5 +1,6 @@
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import Clients from "../components/Clients";
+import AddClientModel from "../components/AddClientModel";
 
 const cache = new InMemoryCache({
   typePolicies: {
@@ -28,6 +29,7 @@ const client = new ApolloClient({
 export default function Home() {
   return (
     <ApolloProvider client={client}>
+      <AddClientModel />
       <Clients />
     </ApolloProvider>
   );
